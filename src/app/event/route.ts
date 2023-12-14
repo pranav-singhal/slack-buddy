@@ -21,7 +21,6 @@ export async function POST(request: Request) {
 
     // the second check is to prevent messages sent from next app getting relayed back to the channel
     if (body?.type === 'event_callback' && body?.event?.subtype !== 'bot_message') {
-        console.log('message recieved', body?.event)
 
         // sending id so it can be used on the front-end for react.map
         socket.emit('slack-message-recieved', {message: body?.event?.text, id: body?.event?.client_msg_id});

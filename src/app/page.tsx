@@ -43,7 +43,6 @@ export default function Home() {
     let response = await fetch('/message', requestOptions)
     response = await response.json();
 
-    console.log(response)
     setIsSendingMessage(false);
     setInputValue('');
     alert('message sent!')

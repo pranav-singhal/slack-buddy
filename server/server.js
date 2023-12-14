@@ -11,18 +11,18 @@ const io = new Server(server, {
 
 
 io.on('connection', (socket) => {
-    console.log('someone connected');
+    console.log('connection established');
     
     // Handle chat messages sent via slack directly
     socket.on('slack-message-recieved', (message) => {
       
-      console.log('message recieved from slack', message)
+      
       // forwards messages to the next app
       io.emit('slack-message-forwarded', message); // Broadcast the message to all connected clients
     });
   
     socket.on('disconnect', () => {
-      console.log('A user disconnected');
+      console.log('connection dropped');
     });
   });
   
