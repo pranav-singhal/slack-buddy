@@ -34,6 +34,7 @@ export async function POST(request: Request) {
       };
 
     try {
+        // @ts-ignore
         await fetch(slackWebhookURL, requestOptions);    
         return Response.json({message: "success"});
     } catch (error) {

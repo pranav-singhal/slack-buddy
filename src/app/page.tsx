@@ -39,7 +39,7 @@ export default function Home() {
         redirect: 'follow'
       };
 
-    
+    // @ts-ignore
     let response = await fetch('/message', requestOptions)
     response = await response.json();
 
