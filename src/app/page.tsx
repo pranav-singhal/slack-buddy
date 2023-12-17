@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 import SlackMessages, { SlacKMessage } from './components/SlackMessages';
 
 // initialise the socker connection to post messages received from slack to.
-const socket = io('http://localhost:3001');
+const socket = io('https://slack-buddy-server.onrender.com:3001');
 
 export default function Home() {
   const [inputValue, setInputValue] = useState<string>('');
@@ -15,7 +15,9 @@ export default function Home() {
   
   useEffect(() => {
 
+    console.log('attempting connection to socket')
     socket.on('slack-message-forwarded', (message) => {
+      console.log('message received on socket', JSON.stringify(message))
     
       setSlackMessages((previousMessages: SlacKMessage[]) => [...previousMessages, message])
     })
