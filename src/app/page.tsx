@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 import SlackMessages, { SlacKMessage } from './components/SlackMessages';
 
 // initialise the socker connection to post messages received from slack to.
-const socket = io('https://slack-buddy-server.onrender.com:3001');
+const socket = io('https://slack-buddy-server.onrender.com');
 
 export default function Home() {
   const [inputValue, setInputValue] = useState<string>('');

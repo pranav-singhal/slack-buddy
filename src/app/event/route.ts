@@ -12,7 +12,7 @@ import { io } from "socket.io-client";
 export async function POST(request: Request) {
 
     // initialise the socker connection to post messages received from slack to.
-    const socket = io('https://slack-buddy-server.onrender.com:3001');
+    const socket = io('https://slack-buddy-server.onrender.com');
     const body = await request.json();
 
     if (body?.type === 'url_verification') {
