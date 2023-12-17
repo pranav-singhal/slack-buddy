@@ -26,4 +26,4 @@ io.on('connection', (socket) => {
     });
   });
   
-  server.listen(80, '0.0.0.0');
+  server.listen(3001, '0.0.0.0');
