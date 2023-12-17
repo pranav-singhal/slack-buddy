@@ -26,4 +26,6 @@ io.on('connection', (socket) => {
     });
   });
   
-  server.listen(3001);
+  server.listen(80, () => {
+    console.log('listenting to socket connections on port 80')
+  });
