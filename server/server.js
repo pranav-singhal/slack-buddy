@@ -1,5 +1,5 @@
-import http from 'http';
-import { Server } from 'socket.io';
+const http  =  require('http');
+const { Server } = require('socket.io');
 const server = http.createServer(() => {});
 
 const io = new Server(server, {
